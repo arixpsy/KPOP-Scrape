@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Roboto&display=swap');
+
+:root{
+  --default__fs: 1rem;
+  --default__br: 15px;
+  --default__padding: 15px;
+
+  --color__text: #4d4d4d;
+  --color__primary: #56CCCE;
+  --color__primaryLight: #A3E1DC;
+  --color__secondary: #FCB9A9;
+  --color__secondaryLight:#FFDBCB;
+  --color__background: #EEE9E6;
+  --view__color: #FFF;
+}
+
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto';
+  color: var(--color__text);
+}
+
+h1, h2, h3 ,h4 ,h5 ,h6 {
+  font-family: 'Open Sans';
+}
+
+p{
+  font-size: var(--default__fs);
+}
+
+.svgWrapper{
+  top: 0;
+  left: 0;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+}
+svg {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  overflow: visible;
+}
+svg .song:hover{
+  cursor: pointer;
+}
+main, #root, body, html{
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--color__background);
+}
+main {
+  position: relative;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  z-index: 3;
+}
+section{
+  scroll-snap-align: start;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+section > * {
+  z-index: 2;
+}
+/* Hover Modal Styling */
+
+.hover-modal__body{
+  padding: var(--default__padding);
+}
+.hover-modal__body > span{
+  margin: 2px 0
+}
+
+/* Introduction Styling */
+.section__introduction {
+  font-weight: 700;
+  font-size: 3rem;
+}
+
+/* View By Type Styling */
+.section__viewByType > div{
+  background-color: rgba(255,255,255,0.75);
+  border-radius: var(--default__br);
+  padding: var(--default__padding);
+  padding: 30px;
+}
+.section__viewByType > div > h1{
+  text-align: center;
+  font-size: 2rem;
+}
+.section__viewByType > div > div{
+  display: flex;
+}
+
+.section__viewByType label {
+  pointer-events: all;
+  width: max-content;
+  font-weight: 700;
+  background-color: var(--color__primary);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 100vh;
+  margin: 5px 0px;
+  cursor: pointer;
+  transition: all ease-out 250ms;
+}
+.section__viewByType label:hover, .section__viewByType label:focus {
+  transform: scale(1.1);
+}
+.section__viewByType input[type="radio"]:checked + label{
+  background-color: var(--color__secondary);
+  cursor: default;
+}
+.section__viewByType input {
+  display: none;
+}
+.section__viewByType form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: var(--default__padding);
+}
+
+.section__viewByType .svgContainer{
+  min-height: 500px;
+  min-width: 500px;
+  position: relative;
+}
+.section__viewByType .svgContainer > .viewByType__content{
+  position: absolute;
+  min-height: 500px;
+  min-width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section__viewByType .slice{
+  pointer-events: all;
+  cursor: pointer;
+}
+.viewByType__summary, .viewByType__individual{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.viewByType__summary p{
+  font-size: 1.5rem;
+}
+
+.viewByType__content .hover-tooltip{
+  position: absolute;
+  font-size: 0.6rem;
+  color: #4d4d4d;
+  width: 100%;
+  text-align: center;
+}
+
+.viewByType__content .hover-tooltip span{
+  position: absolute;
+  transform-origin: top;
+  width: 5px;
+  text-align: center;
+}
+.viewByType__individual{
+  padding: 100px;
+  text-align: center;
+}
+/* HighestViewByYear styling */
+.section__highestViewByYear > div > h1{
+  text-align: center;
+  font-size: 2rem;
+}
+
+.section__highestViewByYear > div{
+  background-color: rgba(255,255,255,0.75);
+  border-radius: var(--default__br);
+  padding: var(--default__padding);
+  padding: 30px;
+}
+
+.highestViewByYear_controls{
+  display: flex;
+  justify-content: center;
+  margin: var(--default__padding) 0;
+  font-size: 1.5rem;
+}
+.highestViewByYear_controls > * {
+  pointer-events: all;
+}
+.highestViewByYear_controls input{
+  border: none;
+  background-color: rgba(0,0,0,0);
+  text-align: center;
+  margin: 0 var(--default__padding);
+  font-size: 1.5rem;
+}
+.highestViewByYear_controls button{
+  border: none;
+  background-color: rgba(0,0,0,0);
+  cursor: pointer;
+  border-radius: 100vh;
+  padding: 0;
+  width: 2rem;
+}
+.highestViewByYear_controls button:hover  {
+  border: none;
+  background-color: lightgrey;
+  outline: 0;
+}
+.highestViewByYear_controls button:focus{
+  outline: 0;
+}
+.highestViewByYear_controls input::-webkit-inner-spin-button, .highestViewByYear_controls input::-webkit-inner-spin-button  {
+  -webkit-appearance: none;
+}
+
+.section__highestViewByYear .svgContainer{
+  min-height: 300px;
+  min-width: 600px;
+  position: relative;
+  overflow: hidden;
+}
+
+.section__highestViewByYear svg{
+  min-height: 300px;
+  min-width: 600px;
+  position: relative;
+  z-index: 3;
+  pointer-events: all;
+  cursor: move;
+}
