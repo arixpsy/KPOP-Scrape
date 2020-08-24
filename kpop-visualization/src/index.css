@@ -247,14 +247,18 @@ section > * {
 .youtube__container{
   position: fixed;
   height: 0px;
-  width: 480px;
+  width: 100vw;
+  max-width: 480px;
   background-color: #fff;
   bottom: 0;
   left: 0;
   z-index: 5;
   transition: height 250ms ease;
 }
-
+.youtube__container > div:not(.playerToggle){
+  height: 100%;
+  width: 100%;
+}
 .playerToggle{
   position: absolute;
   display:flex;

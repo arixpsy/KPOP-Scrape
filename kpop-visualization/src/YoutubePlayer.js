@@ -4,8 +4,8 @@ import YouTube from 'react-youtube';
 function YoutubePlayer({ selectedItem, showPlayer, setShowPlayer }){
 
     const playerOpts = {
-        height: '270',
-        width: '480',
+        height: '100%',
+        width: '100%',
         playerVars: {
             autoplay: 1,
           },
@@ -17,6 +17,7 @@ function YoutubePlayer({ selectedItem, showPlayer, setShowPlayer }){
         { selectedItem ? <YouTube 
             videoId={selectedItem.videoLink.split('/')[3]}
             opts={playerOpts}
+            className="youtube__video"
             /> 
         : <div class="playerInstruction">Click on a dot to view its video</div>}
         
