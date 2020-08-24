@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react'
-import { select, axisBottom, axisLeft, scaleBand, scaleLinear, max, min, zoom, event, zoomTransform, zoomIdentity } from 'd3';
+import { select, axisLeft, scaleBand, scaleLinear, max, min, zoom, zoomTransform } from 'd3';
 import UseResizeObserver from '../util/UseResizeObserver';
 import ViewColorScale from '../util/ViewColorScale';
 
@@ -17,9 +17,9 @@ function HighestViewByYear( { data } ){
     )
     const [ currentZoomState, setCurrentZoomState] = useState()
     const [ hoveredItem, setHoveredItem] = useState(null);
-    
+
     const valueIncrease = () => {
-        if (inputRef.current.value == max(years)) return;
+        if (Number(inputRef.current.value) === max(years)) return;
         inputRef.current.value = Number(inputRef.current.value) + 1
         setFilterData(
             data
@@ -30,7 +30,7 @@ function HighestViewByYear( { data } ){
     }
 
     const valueDecrease = () => {
-        if (inputRef.current.value == min(years)) return;
+        if (Number(inputRef.current.value) === min(years)) return;
         inputRef.current.value = Number(inputRef.current.value) - 1
         setFilterData(
             data
