@@ -87,6 +87,7 @@ section > * {
 .section__introduction {
   font-weight: 700;
   font-size: 3rem;
+  text-align: center;
 }
 
 /* View By Type Styling */
