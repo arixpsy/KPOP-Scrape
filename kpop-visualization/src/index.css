@@ -241,3 +241,39 @@ section > * {
   pointer-events: all;
   cursor: move;
 }
+
+/* YoutubePlayer styling */
+.youtube__container{
+  position: fixed;
+  height: 0px;
+  width: 480px;
+  background-color: #fff;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+  transition: height 250ms ease;
+}
+
+.playerToggle{
+  position: absolute;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  top: -30px;
+  background-color: #fff;
+  border-radius: 100vh 100vh 0 0;
+  cursor: pointer;
+}
+.playerInstruction{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.youtube__container.expand{
+  height: 270px;
+}

@@ -3,7 +3,7 @@ import { select, forceSimulation, forceCenter, forceCollide , forceManyBody, sca
 import ViewColorScale from './util/ViewColorScale';
 import UseResizeObserver from './util/UseResizeObserver';
 
-function ForceChart({ data, settings, setHoveredItem, dataLimit }){
+function ForceChart({ data, settings, setHoveredItem, dataLimit, setSelectedItem, setShowPlayer}){
     const svgRef = useRef();
     const wrapperRef = useRef();
     const dimensions = UseResizeObserver(wrapperRef);
@@ -38,10 +38,16 @@ function ForceChart({ data, settings, setHoveredItem, dataLimit }){
                     .on("mouseout", () =>{
                         setHoveredItem(null)
                     })
+                    .on("click", value => {
+                        setSelectedItem(value)
+                        setShowPlayer(true)
+                    })
                     .transition()
                     .attr("r", value => { return sizeScale(value.youtubeViewCount) })
                     .attr("fill", value => ViewColorScale(value.youtubeViewCount))
+                    
             })
+            
         simulation.restart();
 
     }, [data, dimensions, dataLimit, settings.forceManyBodyStrength, setHoveredItem]);

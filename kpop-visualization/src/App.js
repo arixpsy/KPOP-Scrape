@@ -4,6 +4,7 @@ import HoverModal from './HoverModal';
 import Introduction from './slides/Introduction';
 import ViewByType from './slides/ViewByType';
 import HighestViewByYear from './slides/HighestViewByYear';
+import YoutubePlayer from './YoutubePlayer';
 import kpopData from '../src/data/kpop.json';
 import './App.css';
 
@@ -11,6 +12,8 @@ import './App.css';
 function App() {
   const [data, setData] = useState(kpopData.data.slice(0,2000).filter(value => value.youtubeLinkStatus));
   const [hoveredItem , setHoveredItem] = useState(null);
+  const [selectedItem, setSelectedItem] = useState(null);
+  const [showPlayer, setShowPlayer] = useState(null);
   const [cursorLocation, setCursorLocation] = useState(null);
   const [settings, setSettings] = useState({
     minCircleRadius: 5,
@@ -40,12 +43,14 @@ function App() {
     }, 1000)
 
   }
+
   return <main ref={mainRef} onMouseMove={onMouseMove} onWheel={onWheelEvent}>
     <HoverModal data={hoveredItem} cursorLocation={cursorLocation} />
-    <ForceChart data={data} setData={setData} settings={settings} setHoveredItem={setHoveredItem} dataLimit={kpopData.summary}/>
+    <ForceChart data={data} setData={setData} settings={settings} setHoveredItem={setHoveredItem} dataLimit={kpopData.summary} setSelectedItem={setSelectedItem} setShowPlayer={setShowPlayer}/>
     <Introduction />
     <ViewByType data={data} />
     <HighestViewByYear data={data}  />
+    <YoutubePlayer selectedItem={selectedItem} showPlayer={showPlayer} setShowPlayer={setShowPlayer } />
     {/* <ArtistView /> */}
     {/* <Summary /> */}
   </main>
