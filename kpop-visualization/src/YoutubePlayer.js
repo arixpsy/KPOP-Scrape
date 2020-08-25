@@ -19,7 +19,7 @@ function YoutubePlayer({ selectedItem, showPlayer, setShowPlayer }){
             opts={playerOpts}
             className="youtube__video"
             /> 
-        : <div class="playerInstruction">Click on a dot to view its video</div>}
+        : <div className="playerInstruction">Click on a dot to view its video</div>}
         
     </div>;
 }

@@ -40,7 +40,7 @@ function App() {
         newSettings.forceManyBodyStrength = -20
       }
       setSettings(newSettings)
-    }, 1000)
+    }, 500)
 
   }
 

@@ -86,7 +86,7 @@ section > * {
 /* Introduction Styling */
 .section__introduction {
   font-weight: 700;
-  font-size: 3rem;
+  font-size: 1.8rem;
   text-align: center;
 }
 
@@ -246,14 +246,18 @@ section > * {
 /* YoutubePlayer styling */
 .youtube__container{
   position: fixed;
-  height: 0px;
+  height: 270px;
   width: 100vw;
   max-width: 480px;
   background-color: #fff;
   bottom: 0;
   left: 0;
   z-index: 5;
-  transition: height 250ms ease;
+  transform: translate(0px, 0px);
+  transition: transform 250ms ease;
+}
+.youtube__container.expand{
+  transform: translate(0px, 270px);
 }
 .youtube__container > div:not(.playerToggle){
   height: 100%;
@@ -261,13 +265,14 @@ section > * {
 }
 .playerToggle{
   position: absolute;
-  display:flex;
+  background-color: #fff;
+  display: flex;
   justify-content: center;
   align-items: center;
   height: 30px;
   width: 30px;
   top: -30px;
-  background-color: #fff;
+  left: calc(50vw - 15px); 
   border-radius: 100vh 100vh 0 0;
   cursor: pointer;
 }
@@ -279,6 +284,22 @@ section > * {
   align-items: center;
   overflow: hidden;
 }
-.youtube__container.expand{
-  height: 270px;
+
+@media only screen and (min-width: 480px) {
+  .youtube__container{
+    transform: translate(calc(50vw - 240px), 270px);
+  }
+  .youtube__container.expand{
+    transform: translate(calc(50vw - 240px), 0px);
+  }
+  .playerToggle{
+    left: calc(240px - 15px); 
+  }
+}
+
+
+@media only screen and (min-width: 768px){
+  .section__introduction {
+    font-size: 3rem;
+  }
 }
