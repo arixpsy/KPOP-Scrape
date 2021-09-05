@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver import ActionChains
+from webdriver_manager.chrome import ChromeDriverManager
 import time
 import json
 
@@ -12,9 +13,9 @@ URL = "https://dbkpop.com/db/k-pop-music-videos"
 FINAL = { 'data': [], 'summary': { 'highestViews': 0 , 'highestComments': 0,  'highestLikes': 0 , 'highestDislikes': 0 }}
 ERROR_LOG = []
 
-driver = webdriver.Chrome(PATH)
+driver = webdriver.Chrome(ChromeDriverManager().install())
 driver.get(URL)
-secondDriver = webdriver.Chrome(PATH)
+secondDriver = webdriver.Chrome(ChromeDriverManager().install())
 
 try:
     time.sleep(5)
