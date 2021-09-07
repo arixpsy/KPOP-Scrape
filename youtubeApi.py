@@ -1,4 +1,4 @@
-API_KEY = 'AIzaSyDzAwR-WJ8SN2qxF7aJ7FjqWj-QOCuicw8'
+API_KEY = <YOUR-API-KEY>
 
 from googleapiclient.discovery import build
 import json
