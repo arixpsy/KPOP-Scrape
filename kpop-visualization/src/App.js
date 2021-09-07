@@ -10,7 +10,7 @@ import './App.css';
 
 
 function App() {
-  const [data, setData] = useState(kpopData.data.slice(0,2000).filter(value => value.youtubeLinkStatus));
+  const [data, setData] = useState(kpopData.data.slice(0,3000).filter(value => value.youtubeLinkStatus));
   const [hoveredItem , setHoveredItem] = useState(null);
   const [selectedItem, setSelectedItem] = useState(null);
   const [showPlayer, setShowPlayer] = useState(null);
