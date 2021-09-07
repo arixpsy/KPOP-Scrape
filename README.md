@@ -4,7 +4,7 @@
 
 ## Overview
 KPOP Visualization (2020 Summer Side Project)
-
+<a href="https://github.com/arixpsy/KPOP-Scrape">DEMO LINK</a>
 <img width="100%" src="./Images/overview.gif">
 
 ## Installation (Serve Locally)
