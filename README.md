@@ -5,6 +5,8 @@
 ## Overview
 KPOP Visualization (2020 Summer Side Project)
 
+<img width="100%" src="./Images/overview.gif">
+
 ## Installation (Serve Locally)
 #### React Application
 
