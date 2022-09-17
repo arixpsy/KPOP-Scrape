@@ -46,7 +46,7 @@ def main():
       
       FINAL['data'].append(kpopVid)
 
-  with open('kpopFINAL.json', 'w') as file:
+  with open('kpopListWithStats.json', 'w') as file:
         json.dump(FINAL, file)
 
 if __name__ == "__main__":
